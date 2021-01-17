@@ -65,7 +65,7 @@ const unsigned int Rcons[10] = {
 	0x20000000, 0x40000000, 0x80000000, 0x1b000000, 0x36000000 
 };
 // Optimization tables
-const unsigned int Te0[256] = {
+unsigned int Te0[256] = {
 0xc66363a5, 0xf87c7c84, 0xee777799, 0xf67b7b8d, 0xfff2f20d, 0xd66b6bbd, 0xde6f6fb1, 0x91c5c554,
 0x60303050, 0x02010103, 0xce6767a9, 0x562b2b7d, 0xe7fefe19, 0xb5d7d762, 0x4dababe6, 0xec76769a,
 0x8fcaca45, 0x1f82829d, 0x89c9c940, 0xfa7d7d87, 0xeffafa15, 0xb25959eb, 0x8e4747c9, 0xfbf0f00b,
@@ -99,7 +99,7 @@ const unsigned int Te0[256] = {
 0x038c8c8f, 0x59a1a1f8, 0x09898980, 0x1a0d0d17, 0x65bfbfda, 0xd7e6e631, 0x844242c6, 0xd06868b8,
 0x824141c3, 0x299999b0, 0x5a2d2d77, 0x1e0f0f11, 0x7bb0b0cb, 0xa85454fc, 0x6dbbbbd6, 0x2c16163a,
 };
-const unsigned int Te1[256] = {
+unsigned int Te1[256] = {
 0xa5c66363, 0x84f87c7c, 0x99ee7777, 0x8df67b7b, 0x0dfff2f2, 0xbdd66b6b, 0xb1de6f6f, 0x5491c5c5,
 0x50603030, 0x03020101, 0xa9ce6767, 0x7d562b2b, 0x19e7fefe, 0x62b5d7d7, 0xe64dabab, 0x9aec7676,
 0x458fcaca, 0x9d1f8282, 0x4089c9c9, 0x87fa7d7d, 0x15effafa, 0xebb25959, 0xc98e4747, 0x0bfbf0f0,
@@ -133,7 +133,7 @@ const unsigned int Te1[256] = {
 0x8f038c8c, 0xf859a1a1, 0x80098989, 0x171a0d0d, 0xda65bfbf, 0x31d7e6e6, 0xc6844242, 0xb8d06868,
 0xc3824141, 0xb0299999, 0x775a2d2d, 0x111e0f0f, 0xcb7bb0b0, 0xfca85454, 0xd66dbbbb, 0x3a2c1616,
 };
-const unsigned int Te2[256] = {
+unsigned int Te2[256] = {
 0x63a5c663, 0x7c84f87c, 0x7799ee77, 0x7b8df67b, 0xf20dfff2, 0x6bbdd66b, 0x6fb1de6f, 0xc55491c5,
 0x30506030, 0x01030201, 0x67a9ce67, 0x2b7d562b, 0xfe19e7fe, 0xd762b5d7, 0xabe64dab, 0x769aec76,
 0xca458fca, 0x829d1f82, 0xc94089c9, 0x7d87fa7d, 0xfa15effa, 0x59ebb259, 0x47c98e47, 0xf00bfbf0,
@@ -167,7 +167,7 @@ const unsigned int Te2[256] = {
 0x8c8f038c, 0xa1f859a1, 0x89800989, 0x0d171a0d, 0xbfda65bf, 0xe631d7e6, 0x42c68442, 0x68b8d068,
 0x41c38241, 0x99b02999, 0x2d775a2d, 0x0f111e0f, 0xb0cb7bb0, 0x54fca854, 0xbbd66dbb, 0x163a2c16,
 };
-const unsigned int Te3[256] = {
+unsigned int Te3[256] = {
 0x6363a5c6, 0x7c7c84f8, 0x777799ee, 0x7b7b8df6, 0xf2f20dff, 0x6b6bbdd6, 0x6f6fb1de, 0xc5c55491,
 0x30305060, 0x01010302, 0x6767a9ce, 0x2b2b7d56, 0xfefe19e7, 0xd7d762b5, 0xababe64d, 0x76769aec,
 0xcaca458f, 0x82829d1f, 0xc9c94089, 0x7d7d87fa, 0xfafa15ef, 0x5959ebb2, 0x4747c98e, 0xf0f00bfb,
@@ -201,7 +201,7 @@ const unsigned int Te3[256] = {
 0x8c8c8f03, 0xa1a1f859, 0x89898009, 0x0d0d171a, 0xbfbfda65, 0xe6e631d7, 0x4242c684, 0x6868b8d0,
 0x4141c382, 0x9999b029, 0x2d2d775a, 0x0f0f111e, 0xb0b0cb7b, 0x5454fca8, 0xbbbbd66d, 0x16163a2c,
 };
-const unsigned int Td0[256] = {
+unsigned int Td0[256] = {
 0x51f4a750, 0x7e416553, 0x1a17a4c3, 0x3a275e96, 0x3bab6bcb, 0x1f9d45f1, 0xacfa58ab, 0x4be30393,
 0x2030fa55, 0xad766df6, 0x88cc7691, 0xf5024c25, 0x4fe5d7fc, 0xc52acbd7, 0x26354480, 0xb562a38f,
 0xdeb15a49, 0x25ba1b67, 0x45ea0e98, 0x5dfec0e1, 0xc32f7502, 0x814cf012, 0x8d4697a3, 0x6bd3f9c6,
@@ -235,7 +235,7 @@ const unsigned int Td0[256] = {
 0xcaaff381, 0xb968c43e, 0x3824342c, 0xc2a3405f, 0x161dc372, 0xbce2250c, 0x283c498b, 0xff0d9541,
 0x39a80171, 0x080cb3de, 0xd8b4e49c, 0x6456c190, 0x7bcb8461, 0xd532b670, 0x486c5c74, 0xd0b85742,
 };
-const unsigned int Td1[256] = {
+unsigned int Td1[256] = {
 0x5051f4a7, 0x537e4165, 0xc31a17a4, 0x963a275e, 0xcb3bab6b, 0xf11f9d45, 0xabacfa58, 0x934be303,
 0x552030fa, 0xf6ad766d, 0x9188cc76, 0x25f5024c, 0xfc4fe5d7, 0xd7c52acb, 0x80263544, 0x8fb562a3,
 0x49deb15a, 0x6725ba1b, 0x9845ea0e, 0xe15dfec0, 0x02c32f75, 0x12814cf0, 0xa38d4697, 0xc66bd3f9,
@@ -269,7 +269,7 @@ const unsigned int Td1[256] = {
 0x81caaff3, 0x3eb968c4, 0x2c382434, 0x5fc2a340, 0x72161dc3, 0x0cbce225, 0x8b283c49, 0x41ff0d95,
 0x7139a801, 0xde080cb3, 0x9cd8b4e4, 0x906456c1, 0x617bcb84, 0x70d532b6, 0x74486c5c, 0x42d0b857,
 };
-const unsigned int Td2[256] = {
+unsigned int Td2[256] = {
 0xa75051f4, 0x65537e41, 0xa4c31a17, 0x5e963a27, 0x6bcb3bab, 0x45f11f9d, 0x58abacfa, 0x03934be3,
 0xfa552030, 0x6df6ad76, 0x769188cc, 0x4c25f502, 0xd7fc4fe5, 0xcbd7c52a, 0x44802635, 0xa38fb562,
 0x5a49deb1, 0x1b6725ba, 0x0e9845ea, 0xc0e15dfe, 0x7502c32f, 0xf012814c, 0x97a38d46, 0xf9c66bd3,
@@ -303,7 +303,7 @@ const unsigned int Td2[256] = {
 0xf381caaf, 0xc43eb968, 0x342c3824, 0x405fc2a3, 0xc372161d, 0x250cbce2, 0x498b283c, 0x9541ff0d,
 0x017139a8, 0xb3de080c, 0xe49cd8b4, 0xc1906456, 0x84617bcb, 0xb670d532, 0x5c74486c, 0x5742d0b8,
 };
-const unsigned int Td3[256] = {
+unsigned int Td3[256] = {
 0xf4a75051, 0x4165537e, 0x17a4c31a, 0x275e963a, 0xab6bcb3b, 0x9d45f11f, 0xfa58abac, 0xe303934b,
 0x30fa5520, 0x766df6ad, 0xcc769188, 0x024c25f5, 0xe5d7fc4f, 0x2acbd7c5, 0x35448026, 0x62a38fb5,
 0xb15a49de, 0xba1b6725, 0xea0e9845, 0xfec0e15d, 0x2f7502c3, 0x4cf01281, 0x4697a38d, 0xd3f9c66b,
@@ -337,7 +337,6 @@ const unsigned int Td3[256] = {
 0xaff381ca, 0x68c43eb9, 0x24342c38, 0xa3405fc2, 0x1dc37216, 0xe2250cbc, 0x3c498b28, 0x0d9541ff,
 0xa8017139, 0x0cb3de08, 0xb4e49cd8, 0x56c19064, 0xcb84617b, 0x32b670d5, 0x6c5c7448, 0xb85742d0,
 };
-
 
 #define SubByte(T) {																									\
 	(T)[0] = Sbox[GetB0((T)[0])] ^ (Sbox[GetB1((T)[0])]<<8) ^ (Sbox[GetB2((T)[0])]<<16) ^ (Sbox[GetB3((T)[0])]<<24);	\
@@ -813,78 +812,78 @@ int AES_Decrypt(unsigned int* Ciphertext, unsigned int* Plaintext, unsigned int*
 	s3 = T[3] ^ Roundkeys[round * 4 + 3];
 	if (round >10){
 		// N-1 round
-		t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[round * 4 - 4];
-		t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[round * 4 - 3];
-		t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[round * 4 - 2];
-		t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[round * 4 - 1];
+		t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[round * 4 - 4];
+		t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[round * 4 - 3];
+		t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[round * 4 - 2];
+		t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[round * 4 - 1];
 		// N-2 round
-		s0 = Td0[t0 >> 24] ^ Td1[(t3 >> 16) & 0xff] ^ Td2[(t2 >> 8) & 0xff] ^ Td3[t1 & 0xff] ^ Roundkeys[round * 4 - 8];
-		s1 = Td0[t1 >> 24] ^ Td1[(t0 >> 16) & 0xff] ^ Td2[(t3 >> 8) & 0xff] ^ Td3[t2 & 0xff] ^ Roundkeys[round * 4 - 7];
-		s2 = Td0[t2 >> 24] ^ Td1[(t1 >> 16) & 0xff] ^ Td2[(t0 >> 8) & 0xff] ^ Td3[t3 & 0xff] ^ Roundkeys[round * 4 - 6];
-		s3 = Td0[t3 >> 24] ^ Td1[(t2 >> 16) & 0xff] ^ Td2[(t1 >> 8) & 0xff] ^ Td3[t0 & 0xff] ^ Roundkeys[round * 4 - 5];
+		s0 = Td0[GetB3(t0)] ^ Td1[GetB2(t3)] ^ Td2[GetB1(t2)] ^ Td3[GetB0(t1)] ^ Roundkeys[round * 4 - 8];
+		s1 = Td0[GetB3(t1)] ^ Td1[GetB2(t0)] ^ Td2[GetB1(t3)] ^ Td3[GetB0(t2)] ^ Roundkeys[round * 4 - 7];
+		s2 = Td0[GetB3(t2)] ^ Td1[GetB2(t1)] ^ Td2[GetB1(t0)] ^ Td3[GetB0(t3)] ^ Roundkeys[round * 4 - 6];
+		s3 = Td0[GetB3(t3)] ^ Td1[GetB2(t2)] ^ Td2[GetB1(t1)] ^ Td3[GetB0(t0)] ^ Roundkeys[round * 4 - 5];
 		if(round >12){
 			// N-3 round
-			t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[round * 4 - 12];
-			t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[round * 4 - 11];
-			t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[round * 4 - 10];
-			t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[round * 4 - 9];
+			t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[round * 4 - 12];
+			t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[round * 4 - 11];
+			t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[round * 4 - 10];
+			t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[round * 4 - 9];
 			// N-4 round
-			s0 = Td0[t0 >> 24] ^ Td1[(t3 >> 16) & 0xff] ^ Td2[(t2 >> 8) & 0xff] ^ Td3[t1 & 0xff] ^ Roundkeys[round * 4 - 16];
-			s1 = Td0[t1 >> 24] ^ Td1[(t0 >> 16) & 0xff] ^ Td2[(t3 >> 8) & 0xff] ^ Td3[t2 & 0xff] ^ Roundkeys[round * 4 - 15];
-			s2 = Td0[t2 >> 24] ^ Td1[(t1 >> 16) & 0xff] ^ Td2[(t0 >> 8) & 0xff] ^ Td3[t3 & 0xff] ^ Roundkeys[round * 4 - 14];
-			s3 = Td0[t3 >> 24] ^ Td1[(t2 >> 16) & 0xff] ^ Td2[(t1 >> 8) & 0xff] ^ Td3[t0 & 0xff] ^ Roundkeys[round * 4 - 13];
+			s0 = Td0[GetB3(t0)] ^ Td1[GetB2(t3)] ^ Td2[GetB1(t2)] ^ Td3[GetB0(t1)] ^ Roundkeys[round * 4 - 16];
+			s1 = Td0[GetB3(t1)] ^ Td1[GetB2(t0)] ^ Td2[GetB1(t3)] ^ Td3[GetB0(t2)] ^ Roundkeys[round * 4 - 15];
+			s2 = Td0[GetB3(t2)] ^ Td1[GetB2(t1)] ^ Td2[GetB1(t0)] ^ Td3[GetB0(t3)] ^ Roundkeys[round * 4 - 14];
+			s3 = Td0[GetB3(t3)] ^ Td1[GetB2(t2)] ^ Td2[GetB1(t1)] ^ Td3[GetB0(t0)] ^ Roundkeys[round * 4 - 13];
 		}
 	}
+	// 9 round
+	t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[36];
+	t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[37];
+	t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[38];
+	t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[39];
+	// 8 round
+	s0 = Td0[GetB3(t0)] ^ Td1[GetB2(t3)] ^ Td2[GetB1(t2)] ^ Td3[GetB0(t1)] ^ Roundkeys[32];
+	s1 = Td0[GetB3(t1)] ^ Td1[GetB2(t0)] ^ Td2[GetB1(t3)] ^ Td3[GetB0(t2)] ^ Roundkeys[33];
+	s2 = Td0[GetB3(t2)] ^ Td1[GetB2(t1)] ^ Td2[GetB1(t0)] ^ Td3[GetB0(t3)] ^ Roundkeys[34];
+	s3 = Td0[GetB3(t3)] ^ Td1[GetB2(t2)] ^ Td2[GetB1(t1)] ^ Td3[GetB0(t0)] ^ Roundkeys[35];
+	// 7 round
+	t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[28];
+	t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[29];
+	t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[30];
+	t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[31];
+	// 6 round
+	s0 = Td0[GetB3(t0)] ^ Td1[GetB2(t3)] ^ Td2[GetB1(t2)] ^ Td3[GetB0(t1)] ^ Roundkeys[24];
+	s1 = Td0[GetB3(t1)] ^ Td1[GetB2(t0)] ^ Td2[GetB1(t3)] ^ Td3[GetB0(t2)] ^ Roundkeys[25];
+	s2 = Td0[GetB3(t2)] ^ Td1[GetB2(t1)] ^ Td2[GetB1(t0)] ^ Td3[GetB0(t3)] ^ Roundkeys[26];
+	s3 = Td0[GetB3(t3)] ^ Td1[GetB2(t2)] ^ Td2[GetB1(t1)] ^ Td3[GetB0(t0)] ^ Roundkeys[27];
+	// 5 round
+	t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[20];
+	t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[21];
+	t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[22];
+	t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[23];
+	// 4 round
+	s0 = Td0[GetB3(t0)] ^ Td1[GetB2(t3)] ^ Td2[GetB1(t2)] ^ Td3[GetB0(t1)] ^ Roundkeys[16];
+	s1 = Td0[GetB3(t1)] ^ Td1[GetB2(t0)] ^ Td2[GetB1(t3)] ^ Td3[GetB0(t2)] ^ Roundkeys[17];
+	s2 = Td0[GetB3(t2)] ^ Td1[GetB2(t1)] ^ Td2[GetB1(t0)] ^ Td3[GetB0(t3)] ^ Roundkeys[18];
+	s3 = Td0[GetB3(t3)] ^ Td1[GetB2(t2)] ^ Td2[GetB1(t1)] ^ Td3[GetB0(t0)] ^ Roundkeys[19];
+	// 3 round
+	t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[12];
+	t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[13];
+	t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[14];
+	t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[15];
+	// 2 round
+	s0 = Td0[GetB3(t0)] ^ Td1[GetB2(t3)] ^ Td2[GetB1(t2)] ^ Td3[GetB0(t1)] ^ Roundkeys[8];
+	s1 = Td0[GetB3(t1)] ^ Td1[GetB2(t0)] ^ Td2[GetB1(t3)] ^ Td3[GetB0(t2)] ^ Roundkeys[9];
+	s2 = Td0[GetB3(t2)] ^ Td1[GetB2(t1)] ^ Td2[GetB1(t0)] ^ Td3[GetB0(t3)] ^ Roundkeys[10];
+	s3 = Td0[GetB3(t3)] ^ Td1[GetB2(t2)] ^ Td2[GetB1(t1)] ^ Td3[GetB0(t0)] ^ Roundkeys[11];
 	//1 round
-	t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[36];
-	t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[37];
-	t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[38];
-	t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[39];
-	//2 round
-	s0 = Td0[t0 >> 24] ^ Td1[(t3 >> 16) & 0xff] ^ Td2[(t2 >> 8) & 0xff] ^ Td3[t1 & 0xff] ^ Roundkeys[32];
-	s1 = Td0[t1 >> 24] ^ Td1[(t0 >> 16) & 0xff] ^ Td2[(t3 >> 8) & 0xff] ^ Td3[t2 & 0xff] ^ Roundkeys[33];
-	s2 = Td0[t2 >> 24] ^ Td1[(t1 >> 16) & 0xff] ^ Td2[(t0 >> 8) & 0xff] ^ Td3[t3 & 0xff] ^ Roundkeys[34];
-	s3 = Td0[t3 >> 24] ^ Td1[(t2 >> 16) & 0xff] ^ Td2[(t1 >> 8) & 0xff] ^ Td3[t0 & 0xff] ^ Roundkeys[35];
-	//3 round
-	t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[28];
-	t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[29];
-	t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[30];
-	t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[31];
-	//4 round
-	s0 = Td0[t0 >> 24] ^ Td1[(t3 >> 16) & 0xff] ^ Td2[(t2 >> 8) & 0xff] ^ Td3[t1 & 0xff] ^ Roundkeys[24];
-	s1 = Td0[t1 >> 24] ^ Td1[(t0 >> 16) & 0xff] ^ Td2[(t3 >> 8) & 0xff] ^ Td3[t2 & 0xff] ^ Roundkeys[25];
-	s2 = Td0[t2 >> 24] ^ Td1[(t1 >> 16) & 0xff] ^ Td2[(t0 >> 8) & 0xff] ^ Td3[t3 & 0xff] ^ Roundkeys[26];
-	s3 = Td0[t3 >> 24] ^ Td1[(t2 >> 16) & 0xff] ^ Td2[(t1 >> 8) & 0xff] ^ Td3[t0 & 0xff] ^ Roundkeys[27];
-	//5 round
-	t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[20];
-	t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[21];
-	t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[22];
-	t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[23];
-	//6 round
-	s0 = Td0[t0 >> 24] ^ Td1[(t3 >> 16) & 0xff] ^ Td2[(t2 >> 8) & 0xff] ^ Td3[t1 & 0xff] ^ Roundkeys[16];
-	s1 = Td0[t1 >> 24] ^ Td1[(t0 >> 16) & 0xff] ^ Td2[(t3 >> 8) & 0xff] ^ Td3[t2 & 0xff] ^ Roundkeys[17];
-	s2 = Td0[t2 >> 24] ^ Td1[(t1 >> 16) & 0xff] ^ Td2[(t0 >> 8) & 0xff] ^ Td3[t3 & 0xff] ^ Roundkeys[18];
-	s3 = Td0[t3 >> 24] ^ Td1[(t2 >> 16) & 0xff] ^ Td2[(t1 >> 8) & 0xff] ^ Td3[t0 & 0xff] ^ Roundkeys[19];
-	//7 round
-	t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[12];
-	t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[13];
-	t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[14];
-	t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[15];
-	//8 round
-	s0 = Td0[t0 >> 24] ^ Td1[(t3 >> 16) & 0xff] ^ Td2[(t2 >> 8) & 0xff] ^ Td3[t1 & 0xff] ^ Roundkeys[8];
-	s1 = Td0[t1 >> 24] ^ Td1[(t0 >> 16) & 0xff] ^ Td2[(t3 >> 8) & 0xff] ^ Td3[t2 & 0xff] ^ Roundkeys[9];
-	s2 = Td0[t2 >> 24] ^ Td1[(t1 >> 16) & 0xff] ^ Td2[(t0 >> 8) & 0xff] ^ Td3[t3 & 0xff] ^ Roundkeys[10];
-	s3 = Td0[t3 >> 24] ^ Td1[(t2 >> 16) & 0xff] ^ Td2[(t1 >> 8) & 0xff] ^ Td3[t0 & 0xff] ^ Roundkeys[11];
-	//9 round
-	t0 = Td0[s0 >> 24] ^ Td1[(s3 >> 16) & 0xff] ^ Td2[(s2 >> 8) & 0xff] ^ Td3[s1 & 0xff] ^ Roundkeys[4];
-	t1 = Td0[s1 >> 24] ^ Td1[(s0 >> 16) & 0xff] ^ Td2[(s3 >> 8) & 0xff] ^ Td3[s2 & 0xff] ^ Roundkeys[5];
-	t2 = Td0[s2 >> 24] ^ Td1[(s1 >> 16) & 0xff] ^ Td2[(s0 >> 8) & 0xff] ^ Td3[s3 & 0xff] ^ Roundkeys[6];
-	t3 = Td0[s3 >> 24] ^ Td1[(s2 >> 16) & 0xff] ^ Td2[(s1 >> 8) & 0xff] ^ Td3[s0 & 0xff] ^ Roundkeys[7];
-	//10 round
-	s0 = ((unsigned int)Inv_Sbox[(t0 >> 24)] << 24) ^ ((unsigned int)Inv_Sbox[(t3 >> 16) & 0xff] << 16) ^ ((unsigned int)Inv_Sbox[(t2 >> 8) & 0xff] << 8) ^ ((unsigned int)Inv_Sbox[(t1) & 0xff]) ^ Roundkeys[0];
-	s1 = ((unsigned int)Inv_Sbox[(t1 >> 24)] << 24) ^ ((unsigned int)Inv_Sbox[(t0 >> 16) & 0xff] << 16) ^ ((unsigned int)Inv_Sbox[(t3 >> 8) & 0xff] << 8) ^ ((unsigned int)Inv_Sbox[(t2) & 0xff]) ^ Roundkeys[1];
-	s2 = ((unsigned int)Inv_Sbox[(t2 >> 24)] << 24) ^ ((unsigned int)Inv_Sbox[(t1 >> 16) & 0xff] << 16) ^ ((unsigned int)Inv_Sbox[(t0 >> 8) & 0xff] << 8) ^ ((unsigned int)Inv_Sbox[(t3) & 0xff]) ^ Roundkeys[2];
-	s3 = ((unsigned int)Inv_Sbox[(t3 >> 24)] << 24) ^ ((unsigned int)Inv_Sbox[(t2 >> 16) & 0xff] << 16) ^ ((unsigned int)Inv_Sbox[(t1 >> 8) & 0xff] << 8) ^ ((unsigned int)Inv_Sbox[(t0) & 0xff]) ^ Roundkeys[3];
+	t0 = Td0[GetB3(s0)] ^ Td1[GetB2(s3)] ^ Td2[GetB1(s2)] ^ Td3[GetB0(s1)] ^ Roundkeys[4];
+	t1 = Td0[GetB3(s1)] ^ Td1[GetB2(s0)] ^ Td2[GetB1(s3)] ^ Td3[GetB0(s2)] ^ Roundkeys[5];
+	t2 = Td0[GetB3(s2)] ^ Td1[GetB2(s1)] ^ Td2[GetB1(s0)] ^ Td3[GetB0(s3)] ^ Roundkeys[6];
+	t3 = Td0[GetB3(s3)] ^ Td1[GetB2(s2)] ^ Td2[GetB1(s1)] ^ Td3[GetB0(s0)] ^ Roundkeys[7];
+	//0 round
+	s0 = ((unsigned int)Inv_Sbox[GetB3(t0)] << 24) ^ ((unsigned int)Inv_Sbox[GetB2(t3)] << 16) ^ ((unsigned int)Inv_Sbox[GetB1(t2)] << 8) ^ ((unsigned int)Inv_Sbox[GetB0(t1)]) ^ Roundkeys[0];
+	s1 = ((unsigned int)Inv_Sbox[GetB3(t1)] << 24) ^ ((unsigned int)Inv_Sbox[GetB2(t0)] << 16) ^ ((unsigned int)Inv_Sbox[GetB1(t3)] << 8) ^ ((unsigned int)Inv_Sbox[GetB0(t2)]) ^ Roundkeys[1];
+	s2 = ((unsigned int)Inv_Sbox[GetB3(t2)] << 24) ^ ((unsigned int)Inv_Sbox[GetB2(t1)] << 16) ^ ((unsigned int)Inv_Sbox[GetB1(t0)] << 8) ^ ((unsigned int)Inv_Sbox[GetB0(t3)]) ^ Roundkeys[2];
+	s3 = ((unsigned int)Inv_Sbox[GetB3(t3)] << 24) ^ ((unsigned int)Inv_Sbox[GetB2(t2)] << 16) ^ ((unsigned int)Inv_Sbox[GetB1(t1)] << 8) ^ ((unsigned int)Inv_Sbox[GetB0(t0)]) ^ Roundkeys[3];
 
 	T[0] = s0; T[1] = s1; T[2] = s2; T[3] = s3;
 	#endif
@@ -903,20 +902,22 @@ int AES_Optimization_Dec_KeySchedule(unsigned int* MK, unsigned int* Roundkeys, 
 	else if(keysize == 192){
 		printf("round = 12\n");
 		round = 12;
+		return 0; // keysize 192 not supported
 	}
 	else if (keysize == 256){
 		printf("round = 14\n");
 		round = 14;
+		return 0; //keysize 256 not supported
 	}
 	else{
 		printf("Something Wrong\n");
 		return 0;
 	}
 
-	Roundkeys[0] = (MK[0] << 24) | (MK[1] << 16) | (MK[2] << 8) | (MK[3]);
-	Roundkeys[1] = (MK[4] << 24) | (MK[5] << 16) | (MK[6] << 8) | (MK[7]);
-	Roundkeys[2] = (MK[8] << 24) | (MK[9] << 16) | (MK[10] << 8) | (MK[11]);
-	Roundkeys[3] = (MK[12] << 24) | (MK[13] << 16) | (MK[14] << 8) | (MK[15]);
+	Roundkeys[0] = MK[0];
+	Roundkeys[1] = MK[1];
+	Roundkeys[2] = MK[2];
+	Roundkeys[3] = MK[3];
 
 	for (i = 0; i < 10; i++) {
 		T = Roundkeys[4 * i + 3];
@@ -951,6 +952,5 @@ int AES_Optimization_Dec_KeySchedule(unsigned int* MK, unsigned int* Roundkeys, 
 			Td2[GetB0(Te1[GetB1(Roundkeys[4 * i + 3])])] ^
 			Td3[GetB0(Te1[GetB0(Roundkeys[4 * i + 3])])];
 	}
-
 	return 1;
 }
