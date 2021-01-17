@@ -422,6 +422,8 @@ int AES_Encrypt(unsigned int* Plaintext, unsigned int* Ciphertext, unsigned int*
 int AES_KeySchedule(unsigned int * MasterKey, unsigned int* Roundkeys, int keysize);
 int AES_Decrypt(unsigned int* Ciphertext, unsigned int* Plaintext, unsigned int* Roundkeys, int keysize);
 int AES_Optimization_Dec_KeySchedule(unsigned int* MK, unsigned int* Roundkeys, const int keysize);
+int AES_CBC_Enc(unsigned int* MK, int keysize, unsigned int* IV, unsigned int* data, int datalen);
+int AES_CBC_Dec(unsigned int* MK, int keysize, unsigned int* IV, unsigned int* data, int datalen);
 void Viewhex(unsigned int* Value){
 	for(int i = 0; i<4; i++){
 		printf("%08x ", Value[i]);
@@ -438,17 +440,15 @@ int main(){
 
 	int keysize = 128;
 	if(AES_Encrypt(PT, CT, MK, keysize)){
-		for(int i = 0; i<4; i++){
-		printf("%02x %02x %02x %02x ", GetB3(CT[i]) & 0xff, GetB2(CT[i]) & 0xff, GetB1(CT[i]) & 0xff, GetB0(CT[i]) & 0xff);
-		}
+		Viewhex(CT);
 		printf("\n");
 	}
 	if(AES_Decrypt(CT, PT2, MK, keysize)){
-		for(int i = 0; i<4; i++){
-		printf("%02x %02x %02x %02x ", GetB3(PT2[i]) & 0xff, GetB2(PT2[i]) & 0xff, GetB1(PT2[i]) & 0xff, GetB0(PT2[i]) & 0xff);
-		}
+		Viewhex(PT2);
 		printf("\n");
 	}
+
+
 	return 0;
 }
 
@@ -701,7 +701,7 @@ int AES_Decrypt(unsigned int* Ciphertext, unsigned int* Plaintext, unsigned int*
 	unsigned int s0,s1,s2,s3,t0,t1,t2,t3;
 	unsigned int T[4];
 	unsigned int tmp[4] = {0,};
-	unsigned int Roundkeys[120] = {0,};
+	unsigned int Roundkeys[70] = {0,};
 	T[0] = Ciphertext[0]; T[1] = Ciphertext[1]; T[2] = Ciphertext[2]; T[3] = Ciphertext[3];
 
 
@@ -953,4 +953,47 @@ int AES_Optimization_Dec_KeySchedule(unsigned int* MK, unsigned int* Roundkeys, 
 			Td3[GetB0(Te1[GetB0(Roundkeys[4 * i + 3])])];
 	}
 	return 1;
+}
+
+int AES_CBC_Enc(unsigned int* MK, int keysize, unsigned int* IV, unsigned int* data, int datalen){
+	unsigned int Roundkeys[70];
+	unsigned int Vector[4];
+	unsigned int CT[4];
+	unsigned int * pos;
+
+	pos = data;
+	for( int i = 0; i<datalen; i++){
+		if ( i == 0 ){
+			Vector[0] = IV[0]; Vector[1] = IV[1]; Vector[2] = IV[2]; Vector[3] = IV[3];
+		}
+		else{
+			Vector[0] = (pos-4)[0]; Vector[1] = (pos-4)[1]; Vector[2] = (pos-4)[2]; Vector[3] = (pos-4)[3]; 
+		}
+		pos[0] ^= Vector[0]; pos[1] ^= Vector[1]; pos[2] ^= Vector[2]; pos[3] ^= Vector[3];
+		AES_Encrypt(pos, CT, MK, keysize);
+		pos[0] = CT[0]; pos[1] = CT[1]; pos[2] = CT[2]; pos[3] = CT[3];
+		pos += 4;
+	}
+	return 0;
+}
+
+int AES_CBC_Dec(unsigned int* MK, int keysize, unsigned int* IV, unsigned int* data, int datalen){
+	unsigned int Roundkeys[70];
+	unsigned int Vector[4];
+	unsigned int PT[4];
+	unsigned int * pos;
+
+	pos = data + ((datalen-1) * 4);
+	for( int i = datalen -1; i>=0; i--){
+		if ( i == 0 ){
+			Vector[0] = IV[0]; Vector[1] = IV[1]; Vector[2] = IV[2]; Vector[3] = IV[3];
+		}
+		else{
+			Vector[0] = (pos-4)[0]; Vector[1] = (pos-4)[1]; Vector[2] = (pos-4)[2]; Vector[3] = (pos-4)[3]; 
+		}
+		AES_Decrypt(pos,PT,MK,keysize);
+		pos[0] = PT[0] ^ Vector[0]; pos[1] = PT[1] ^ Vector[1]; pos[2] = PT[2] ^ Vector[2]; pos[3] = PT[3] ^ Vector[3];
+		pos -=4;
+	}
+	return 0;
 }
