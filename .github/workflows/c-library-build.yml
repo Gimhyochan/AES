@@ -30,7 +30,9 @@ jobs:
 
     - name: Build
       run: |
-        cmake -DCMAKE_BUILD_TYPE=Release -DVERSION=${{ steps.determine_version.outputs.version }} .
+        pwd
+        ls | grep CMakeLists.txt
+        cmake .
         make
       env:
         CC: gcc
