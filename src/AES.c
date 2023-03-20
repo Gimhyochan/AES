@@ -432,26 +432,6 @@ void Viewhex(unsigned int* Value){
 	printf("\n"); 
 }
 
-int main(){
-	unsigned int PT[4] = {0x00112233, 0x44556677, 0x8899aabb, 0xccddeeff};
-	unsigned int PT2[4];
-	unsigned int MK[4] = {0x01234567, 0x89abcdef, 0x12345678, 0x9abcdef0};
-	unsigned int CT[4] = {0,};
-
-	int keysize = 128;
-	if(AES_Encrypt(PT, CT, MK, keysize)){
-		Viewhex(CT);
-		printf("\n");
-	}
-	if(AES_Decrypt(CT, PT2, MK, keysize)){
-		Viewhex(PT2);
-		printf("\n");
-	}
-
-
-	return 0;
-}
-
 /*
 * AES_Encrypt
 * Plaintext, Roundkeys -> Ciphertext
@@ -997,3 +977,28 @@ int AES_CBC_Dec(unsigned int* MK, int keysize, unsigned int* IV, unsigned int* d
 	}
 	return 0;
 }
+
+
+/*
+leave main function for example
+int main(){
+	unsigned int PT[4] = {0x00112233, 0x44556677, 0x8899aabb, 0xccddeeff};
+	unsigned int PT2[4];
+	unsigned int MK[4] = {0x01234567, 0x89abcdef, 0x12345678, 0x9abcdef0};
+	unsigned int CT[4] = {0,};
+
+	int keysize = 128;
+	if(AES_Encrypt(PT, CT, MK, keysize)){
+		Viewhex(CT);
+		printf("\n");
+	}
+	if(AES_Decrypt(CT, PT2, MK, keysize)){
+		Viewhex(PT2);
+		printf("\n");
+	}
+
+
+	return 0;
+}
+
+*/
