@@ -22,11 +22,11 @@ jobs:
         else
           export VERSION="0.0.0"
         fi
-        echo "::set-output name=version::$VERSION"
+        echo "{version}={$VERSION}" >> $GITHUB_OUTPUT
 
     - name: Build
       run: |
-        cmake . -DCMAKE_BUILD_TYPE=Release -DVERSION=${{ steps.determine_version.outputs.version }}
+        cmake -DCMAKE_BUILD_TYPE=Release -DVERSION=${{ steps.determine_version.outputs.version }} .
         make
       env:
         CC: gcc
